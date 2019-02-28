@@ -1,10 +1,15 @@
 {
   "name": "helpful-risk-emulator",
   "version": "1.0.0",
-  "description": "Name says all.",
+  "description": "Name says all",
   "main": "bot.js",
-  "author": "canada&jupiter",
+  "author": "canada-and-jupiter",
   "dependencies": {
+    "bufferutil": "^4.0.1",
     "discord.js": "^11.4.2",
+    "erlpack": "^0.1.2",
+    "libsodium-wrappers": "^0.7.4",
+    "node-opus": "^0.3.1",
+    "uws": "^100.0.1"
   }
 }
