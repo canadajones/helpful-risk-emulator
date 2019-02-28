@@ -1,5 +1,5 @@
-H elpful
-R isk
+H elpful<br/>
+R isk<br/>
 E mulator
 
 TODO LIST:
@@ -23,15 +23,15 @@ Rank management
 - #ban
 - #setcountry
 Complete unit mobility
-	-Porting units and such
+- Porting units and such
 Bigger map
-	-The big map provided by the Kaiser
+- The big map provided by the Kaiser
 Extra commands and data that can be edited by WMs
-	-#game [options/player/map]
-		-#game options roll [value for survive] [value for success] [value for fail] [max roll]
-		-#game map [name] [link] [add/remove] //enters a link under a name, link is displayed when name is called
-		-#game player [id] [ban/kick/rank/forcecountry]
-			-#game player [id] rank [rank name]
-			-#game player [id] forcecountry [country name]
-	-#map [name] //calls a map link by name
-	-#readgm (will find and set WMs based on rank name, rank name must be "World Master", will only work if no WMs are in the system)
+- #game [options/player/map]
+  - #game options roll [value for survive] [value for success] [value for fail] [max roll]
+  - #game map [name] [link] [add/remove] //enters a link under a name, link is displayed when name is called
+  - #game player [id] [ban/kick/rank/forcecountry]
+    - #game player [id] rank [rank name]
+    - #game player [id] forcecountry [country name]
+  - #map [name] //calls a map link by name
+  - #readgm (will find and set WMs based on rank name, rank name must be "World Master", will only work if no WMs are in the system)
