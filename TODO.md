@@ -5,7 +5,7 @@ E mulator
 TODO LIST:
 
 Basic responses up and running
-	-#ping
+- #ping
 	-#write
 	-#read
 	-#WHERE'STHEAIRSUPPORT
