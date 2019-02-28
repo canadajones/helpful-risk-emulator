@@ -6,9 +6,15 @@ TODO LIST:
 
 Basic responses up and running
 - #ping
+<<<<<<< HEAD
 - #write
 - #read
 - #WHERE'STHEAIRSUPPORT
+=======
+	-#write
+	-#read
+	-#WHERE'STHEAIRSUPPORT
+>>>>>>> ccf5e7c55b351ea8fa744958d289e34c66d97cd3
 Basic map for testing
 - Small, needs sea and ports
 Basic order parser
