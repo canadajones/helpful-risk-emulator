@@ -36,5 +36,5 @@ Extra commands and data that can be edited by WMs
   - #game player [id] [ban/kick/rank/forcecountry]
     - #game player [id] rank [rank name]
     - #game player [id] forcecountry [country name]
-  - #map [name]  //calls a map link by name
-  - #readgm (will find and set WMs based on rank name, rank name must be "World Master", will only work if no WMs are in the system)
+- #map [name]  //calls a map link by name
+- #readgm (will find and set WMs based on rank name, rank name must be "World Master", will only work if no WMs are in the system)
