@@ -5,23 +5,23 @@ E mulator
 TODO LIST:
 
 Basic responses up and running
-	-#ping
-	-#write
-	-#read
-	-#WHERE'STHEAIRSUPPORT
+- #ping
+- #write
+- #read
+- #WHERE'STHEAIRSUPPORT
 Basic map for testing
-	Small, needs sea and ports
+- Small, needs sea and ports
 Basic order parser
 Basic units and attacking / defending mechanics
 Rank management
-	-Seperate from discord, but will create discord roles and assign them if the option is given
-	-Decides who can enter orders or execute commands
-	-Removes all data on players who leave
-	-#join
-	-#leave
-	-#kick
-	-#ban
-	-#setcountry
+- Seperate from discord, but will create discord roles and assign them if the option is given
+- Decides who can enter orders or execute commands
+- Removes all data on players who leave
+- #join
+- #leave
+- #kick
+- #ban
+- #setcountry
 Complete unit mobility
 	-Porting units and such
 Bigger map
