@@ -49,7 +49,7 @@ client.on('message', message =>{
 	    	break;
      		//!ping
 		case 'ping':
-			message.channel.send('Pong! @'message.author.username + '#' message.author.tag);
+			message.channel.send('Pong! @' + message.author.tag);
 		break;
 	}
      }
