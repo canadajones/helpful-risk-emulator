@@ -29,25 +29,29 @@ var hre = {}
 client.on('message', message =>{
     // Our bot needs to know if it will execute a command
     // It will listen for messages that will start with `!`
-    if (message.content.substring(0, 1) == '!') {
+    if (message.content.substring(0, 1) == '!' || message.content.substring(0, 1) == '#') {
         var args = message.content.substring(1).split(' ');
         var cmd = args[0];
        
         
-		args = args.splice(1);
-		switch(cmd) {
-            // !info
-            case 'icecream':
-                message.channel.send('This is a test of our new bot!');
-            break;
-			// !load
-			case 'cookielist':
-				var rawdata = fs.readFileSync('HREObject.json');  
-				var protoHRE = JSON.parse(rawdata);
-				hre = protoHRE
-				message.channel.send('Successfully loaded!');
-			break;
-		 }
+	args = args.splice(1);
+	switch(cmd) {
+        	// !info
+            	case 'info':
+               		 message.channel.send('This is a test of our new bot!');
+           	break;
+	    	// !load
+	    	case 'cookielist':
+			var rawdata = fs.readFileSync('HREObject.json');  
+			var protoHRE = JSON.parse(rawdata);
+			hre = protoHRE
+	        	message.channel.send('Successfully loaded!');
+	    	break;
+     		//!ping
+		case 'ping':
+			message.channel.send('Pong! @'message.author.username + '#' message.author.tag);
+		break;
+	}
      }
 });
 client.login(auth.token);
