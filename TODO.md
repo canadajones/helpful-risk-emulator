@@ -34,11 +34,56 @@ Bigger map
 - [ ] The big map provided by the Kaiser
 
 Extra commands and data that can be edited by WMs
-- [ ] !game [options/player/map]
-- [ ] !game options roll [value for survive] [value for success] [value for fail] [max roll]
-- [ ] !game map [name] [link] [add/remove]  //enters a link under a name, link is displayed when name is called
-- [ ] !game player [id] [ban/kick/rank/forcecountry]
-- [ ] !game player [id] rank [rank name]
-- [ ] !game player [id] forcecountry [country name]
-- [ ] !map [name]  //calls a map link by name
-- [ ] !readgm (will find and set WMs based on rank name, rank name must be "World Master", will only work if no WMs are in the system)
+- #game [options/player/map]
+- #game options roll [value for survive] [value for success] [value for fail] [max roll]
+- #game map [name] [link] [add/remove]  //enters a link under a name, link is displayed when name is called
+- #game player [id] [ban/kick/rank/forcecountry]
+- #game player [id] rank [rank name]
+- #game player [id] forcecountry [country name]
+- #map [name]  //calls a map link by name
+- #readgm (will find and set WMs based on rank name, rank name must be "World Master", will only work if no WMs are in the system)
+
+COMBAT SYSTEM
+
+---> Troop types
+
+1) Commander
+
+2) Soldier:
+
+a) Infantry: No bonus
+b) Cavalry: 2x speed
+c) Artillery: 1.5x per reigment offensive bonus against forts
+
+---> Fort Mechanism
+
+1) Players can build forts on provinces to raise defensive bonus
+
+2) Fort bonuses: (SUBJECT TO CHANGE)
+
+a) Level 1: 3x defensive bonus
+b) Level 2: 4x defensive bonus
+c) Level 3: 5x defensive bonus
+
+combat.unit.totaldef = unit.def * fort.def + unit.def * 1.5;
+
+--->Battle mechanics with example
+
+1) Instead of attacking or defending, the commander can retreat
+2) Offensive and defensive bonuses are applied
+3) Unit A attacks unit B
+4) A die is thrown to add up to 20% or remove up to 20% attack strength
+5) Another die is thrown to add up to 20% or remove up to 20% defense strength
+6) Those two steps are done to unit A, then done again to unit B
+7) If unit A's attack strength is higher than unit B's defense, unit B perishes
+8) If unit B's attack strength is higher than A's defense, A also perishes
+9) If unit A has both higher attack and defense strength, only B perishes
+10) And vice versa
+11) Routs happen now
+
+---> Additional battle features
+
+1) Better commanders have better AI
+2) units with no commander attack until they die, win or rout
+
+Note: Fort defensive bonus caps out at 3x
