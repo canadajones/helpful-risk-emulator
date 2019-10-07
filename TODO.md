@@ -2,7 +2,7 @@
 **R**isk
 **E**mulator
 
-#TODO LIST:#
+#TODO LIST:
 
 ####Basic responses up and running
 - [ ] ping
