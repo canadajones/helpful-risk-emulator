@@ -57,7 +57,7 @@ Notes:
 2. Soldier:
 	a) Infantry: No bonus
 	b) Cavalry: 2x speed
-	c) Artillery: 1.5x per reigment offensive bonus against forts
+	c) Artillery: 1.5x per regiment offensive bonus against forts
 
 #### Fort Mechanics
 
