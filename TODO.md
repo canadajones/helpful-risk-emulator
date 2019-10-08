@@ -5,14 +5,13 @@
 #TODO LIST:
 
 ####Basic responses up and running
-- [ ] ping
+- [ ] !ping
 - [ ] !write
 - [ ] !read
 - [ ] !WHERE'STHEAIRSUPPORT
 
 ####Basic map for testing
 - [ ] Small, needs sea and ports
-
 - [ ] Basic order parser
 - [ ] Basic units and attacking / defending mechanics
 
@@ -46,22 +45,21 @@
 
 ####Troop types
 
-1) Commander
+1. Commander
 
-2) Soldier:
+2. Soldier:
 	a) Infantry: No bonus
 	b) Cavalry: 2x speed
 	c) Artillery: 1.5x per reigment offensive bonus against forts
 
 ####Fort Mechanics
 
-1) Players can build forts on provinces to raise defensive bonus
+1. Players can build forts on provinces to raise defensive bonus
 
-2) Fort bonuses:
-
-a) Level 1: 1,5x defensive bonus
-b) Level 2: 2,5x defensive bonus
-c) Level 3: 3,5x defensive bonus
+2. Fort bonuses:
+	a) Level 1: 1,5x defensive bonus
+	b) Level 2: 2,5x defensive bonus
+	c) Level 3: 3,5x defensive bonus
 
 ```js
 combat.unit.totaldef = unit.def * fort.def + unit.def * 1.5;
@@ -84,7 +82,7 @@ combat.unit.totaldef = unit.def * fort.def + unit.def * 1.5;
 ####Additional battle features
 
 1. Better commanders have better AI
-2. units with no commander attack until they die, win or rout
+2. Units with no commander attack until they die, win or rout
 
 **Note**: Fort defensive bonus caps out at 3,5x
 
