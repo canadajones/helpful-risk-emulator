@@ -1,7 +1,5 @@
 **H**elpful 
-
 **R**isk
-
 **E**mulator
 
 # TODO LIST:
