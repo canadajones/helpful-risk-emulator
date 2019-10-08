@@ -46,9 +46,9 @@
 
 ---
 
-Notes:
+## Notes:
 
-## COMBAT SYSTEM
+### COMBAT SYSTEM
 
 #### Troop types
 
