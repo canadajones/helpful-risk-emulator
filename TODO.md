@@ -9,11 +9,17 @@
 - [ ] !write
 - [ ] !read
 - [ ] !WHERE'STHEAIRSUPPORT
+- [ ] !quack
 
 ####Basic map for testing
 - [ ] Small, needs sea and ports
 - [ ] Basic order parser
-- [ ] Basic units and attacking / defending mechanics
+- [ ] Basic units and movement
+- [ ] Attacking / defending mechanics
+
+####Complete unit mobility
+- [ ] Porting units and such
+- [ ] Transport by sea
 
 ####Rank management
 - [ ] Separate from Discord, but will create Discord roles and assign them if the option is given
@@ -24,9 +30,6 @@
 - [ ] !kick
 - [ ] !ban
 - [ ] !setcountry
-
-####Complete unit mobility
-- [ ] Porting units and such
 
 ####Bigger map
 - [ ] The big map provided by the Kaiser
@@ -40,6 +43,10 @@
 - [ ] !game player [id] forcecountry [country name]
 - [ ] !map [name]  //calls a map link by name
 - [ ] !readgm (will find and set WMs based on rank name, rank name must be "World Master", will only work if no WMs are in the system)
+
+---
+
+Notes:
 
 ##COMBAT SYSTEM
 
