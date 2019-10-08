@@ -1,5 +1,7 @@
-**H**elpful
+**H**elpful 
+
 **R**isk
+
 **E**mulator
 
 # TODO LIST:
@@ -55,8 +57,11 @@ Notes:
 1. Commander
 
 2. Soldier:
+	
 	a) Infantry: No bonus
+	
 	b) Cavalry: 2x speed
+	
 	c) Artillery: 1.5x per regiment offensive bonus against forts
 
 #### Fort Mechanics
@@ -64,8 +69,11 @@ Notes:
 1. Players can build forts on provinces to raise defensive bonus
 
 2. Fort bonuses:
+	
 	a) Level 1: 1,5x defensive bonus
+	
 	b) Level 2: 2,5x defensive bonus
+	
 	c) Level 3: 3,5x defensive bonus
 
 ```js
