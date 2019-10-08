@@ -2,26 +2,26 @@
 **R**isk
 **E**mulator
 
-#TODO LIST:
+# TODO LIST:
 
-####Basic responses up and running
+#### Basic responses up and running
 - [ ] !ping
 - [ ] !write
 - [ ] !read
 - [ ] !WHERE'STHEAIRSUPPORT
 - [ ] !quack
 
-####Basic map for testing
+#### Basic map for testing
 - [ ] Small, needs sea and ports
 - [ ] Basic order parser
 - [ ] Basic units and movement
 - [ ] Attacking / defending mechanics
 
-####Complete unit mobility
+#### Complete unit mobility
 - [ ] Porting units and such
 - [ ] Transport by sea
 
-####Rank management
+#### Rank management
 - [ ] Separate from Discord, but will create Discord roles and assign them if the option is given
 - [ ] Decides who can enter orders or execute commands
 - [ ] Removes all data on players who leave
@@ -31,10 +31,10 @@
 - [ ] !ban
 - [ ] !setcountry
 
-####Bigger map
+#### Bigger map
 - [ ] The big map provided by the Kaiser
 
-####Extra commands and data that can be edited by WMs
+#### Extra commands and data that can be edited by WMs
 - [ ] !game [options/player/map]
 - [ ] !game options roll [value for survive] [value for success] [value for fail] [max roll]
 - [ ] !game map [name] [link] [add/remove]  //enters a link under a name, link is displayed when name is called
@@ -48,9 +48,9 @@
 
 Notes:
 
-##COMBAT SYSTEM
+## COMBAT SYSTEM
 
-####Troop types
+#### Troop types
 
 1. Commander
 
@@ -59,7 +59,7 @@ Notes:
 	b) Cavalry: 2x speed
 	c) Artillery: 1.5x per reigment offensive bonus against forts
 
-####Fort Mechanics
+#### Fort Mechanics
 
 1. Players can build forts on provinces to raise defensive bonus
 
@@ -72,7 +72,7 @@ Notes:
 combat.unit.totaldef = unit.def * fort.def + unit.def * 1.5;
 ```
 
-####Battle mechanics with example
+#### Battle mechanics with example
 
 1. Instead of attacking or defending, the commander can retreat
 2. Offensive and defensive bonuses are applied
@@ -86,7 +86,7 @@ combat.unit.totaldef = unit.def * fort.def + unit.def * 1.5;
 10. And vice versa
 11. Routs happen now
 
-####Additional battle features
+#### Additional battle features
 
 1. Better commanders have better AI
 2. Units with no commander attack until they die, win or rout
