@@ -4,10 +4,10 @@
 var Discord = require('discord.js');
 
 // Grab bot key
-var auth = require('./auth.json');
+const auth = require('./auth.json');
 
 //Get filesystem library
-var fs = require('fs');
+const fs = require('fs');
 
 // Initialize Discord Bot
 var client = new Discord.Client();
@@ -38,23 +38,52 @@ client.on('message', message =>{
 		var cmd = args[0];
 		args = args.splice(1);
 		switch(cmd) {
-				// !info
-				case 'info':
-						message.channel.send('This is a test of our new bot!');
-				break;
+			// !info
+			case 'info': {
+				message.channel.send('This is a test of our new bot!');
+			break;
+			}	
 
-				// !load
-				case 'load':
-					var rawdata = fs.readFileSync('HREObject.json');  
-					var protoHRE = JSON.parse(rawdata);
-					hre = protoHRE
-					message.channel.send('Successfully loaded!');
-				break;
-
-				//!ping
-			case 'ping':
+			//!ping
+			case 'ping': {
 				message.channel.send('Pong! <@' + message.author.id + '>');
 			break;
+			}
+			
+			// !save
+			case 'save': {
+				let a;
+				try {
+					fs.writeFileSync('HREObject.json', JSON.stringify(hre));
+					message.channel.send('Successfully saved!');
+				}
+				catch (err) {
+					console.error(err);
+					break;
+				}
+			break;
+			}
+
+			// !load
+			case 'load': {
+				let rawdata = fs.readFileSync('HREObject.json');  
+				hre = JSON.parse(rawdata);
+				message.channel.send('Successfully loaded!');
+				break;
+			}
+
+			// !debug
+			case 'debug': {
+				message.channel.send('```js\n' + JSON.stringify(hre) + '```');
+			break;
+			}
+
+			// !setvalue
+			case 'setvalue': {
+				hre[args[0]] = args[1];
+				message.channel.send('Set key ' + args[0] + ' to ' + args[1] + '.');
+			break;
+			}
 		}
 	}
 });
