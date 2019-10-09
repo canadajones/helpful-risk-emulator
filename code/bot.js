@@ -18,40 +18,44 @@ client.on("warn", (e) => console.warn(e));
 
 // Declare status variables and objects
 // Main object
-var hre = {}
+// eslint-disable-next-line no-unused-vars
+var hre = {};
 
- client.on('ready', () => {
-    console.log('Connected');
-    console.log('Logged in as: ');
-    console.log(client.clientuser + '(id)');
+
+client.on('ready', () => {
+	console.log('Connected');
+	console.log('Logged in as: ');
+	console.log(client.user.username + ' (id: '+ client.user.id +')');
 });
 
 client.on('message', message =>{
-    // Our bot needs to know if it will execute a command
-    // It will listen for messages that will start with `!`
-    if (message.content.substring(0, 1) == '!' || message.content.substring(0, 1) == '#') {
-        var args = message.content.substring(1).split(' ');
-        var cmd = args[0];
-       
-        
-	args = args.splice(1);
-	switch(cmd) {
-        	// !info
-            	case 'info':
-               		 message.channel.send('This is a test of our new bot!');
-           	break;
-	    	// !load
-	    	case 'cookielist':
-			var rawdata = fs.readFileSync('HREObject.json');  
-			var protoHRE = JSON.parse(rawdata);
-			hre = protoHRE
-	        	message.channel.send('Successfully loaded!');
-	    	break;
-     		//!ping
-		case 'ping':
-			message.channel.send('Pong! @' + message.author.tag);
-		break;
+	// Our bot needs to know if it will execute a command
+	// It will listen for messages that will start with `!`
+	
+	if (message.content.substring(0, 1) == '!' || message.content.substring(0, 1) == '#') {
+		
+		var args = message.content.substring(1).split(' ');
+		var cmd = args[0];
+		args = args.splice(1);
+		switch(cmd) {
+				// !info
+				case 'info':
+						message.channel.send('This is a test of our new bot!');
+				break;
+
+				// !load
+				case 'load':
+					var rawdata = fs.readFileSync('HREObject.json');  
+					var protoHRE = JSON.parse(rawdata);
+					hre = protoHRE
+					message.channel.send('Successfully loaded!');
+				break;
+
+				//!ping
+			case 'ping':
+				message.channel.send('Pong! <@' + message.author.id + '>');
+			break;
+		}
 	}
-     }
 });
 client.login(auth.token);
