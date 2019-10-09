@@ -52,7 +52,6 @@ client.on('message', message =>{
 			
 			// !save
 			case 'save': {
-				let a;
 				try {
 					fs.writeFileSync('HREObject.json', JSON.stringify(hre));
 					message.channel.send('Successfully saved!');
