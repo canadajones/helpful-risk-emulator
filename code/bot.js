@@ -43,10 +43,40 @@ client.on('message', message =>{
 				message.channel.send('This is a test of our new bot!');
 			break;
 			}	
-
-			//!ping
+		
+			// !ping
 			case 'ping': {
 				message.channel.send('Pong! <@' + message.author.id + '>');
+			break;
+			}
+			
+			// !quack
+			case 'quack': {
+				let a = Math.floor(Math.random()*100) + 1;
+				if (a == 100) {
+					message.channel.send('***H J O N K***');
+					break;
+				}
+				message.channel.send('*ominous quack*');
+			break;
+			}
+
+			// !WHERESTHEAIRSUPPORT
+			case 'WHERESTHEAIRSUPPORT': {
+				message.channel.send('INCOMING!');
+			break;
+			}
+			
+			// !debug
+			case 'debug': {
+				message.channel.send('```js\n' + JSON.stringify(hre) + '```');
+			break;
+			}
+
+			// !setvalue
+			case 'setvalue': {
+				hre[args[0]] = args[1];
+				message.channel.send('Set key ' + args[0] + ' to ' + args[1] + '.');
 			break;
 			}
 			
@@ -71,18 +101,6 @@ client.on('message', message =>{
 				break;
 			}
 
-			// !debug
-			case 'debug': {
-				message.channel.send('```js\n' + JSON.stringify(hre) + '```');
-			break;
-			}
-
-			// !setvalue
-			case 'setvalue': {
-				hre[args[0]] = args[1];
-				message.channel.send('Set key ' + args[0] + ' to ' + args[1] + '.');
-			break;
-			}
 		}
 	}
 });
