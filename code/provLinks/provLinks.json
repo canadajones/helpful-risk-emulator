@@ -1,0 +1,176 @@
+{
+	"landProv": {
+		"for": [
+			"wes",
+			"nor",
+			"WTH"
+			
+		],
+		"wes": [
+			"for",
+			"nor",
+			"swe",
+			"dno",
+			"WTH"
+		],
+		"nor": [
+			"for",
+			"wes",
+			"owo",
+			"dno"
+		],
+		"owo": [
+			"nor",
+			"dno",
+			"ska",
+			"SEA"
+		],
+		"dno": [
+			"nor",
+			"owo",
+			"ska",
+			"wes",
+			"swe",
+			"MAL"
+		],
+		"ska": [
+			"owo",
+			"dno",
+			"MAL",
+			"SEA",
+			"BOB"
+		],
+		"swe": [
+			"wes",
+			"dno",
+			"WTH",
+			"MAL"
+		],
+		"ost": [
+			"lap",
+			"mmm",
+			"fin",
+			"ETH",
+			"ALA"
+		],
+		"lap": [
+			"ost",
+			"mmm",
+			"kol"
+		],
+		"kol": [
+			"lap",
+			"mmm",
+			"ura"
+		],
+		"fin": [
+			"ost",
+			"mmm",
+			"kar",
+			"est",
+			"ALA",
+			"BAY"
+		],
+		"mmm": [
+			"ost",
+			"fin",
+			"lap",
+			"kol",
+			"ura",
+			"kar"
+		],
+		"ura": [
+			"mmm",
+			"kol",
+			"rus",
+			"kar"
+		],
+		"rus": [
+			"kar",
+			"ura"
+		],
+		"kar": [
+			"est",
+			"lat",
+			"lit",
+			"fin",
+			"mmm",
+			"ura",
+			"rus"
+		],
+		"est": [
+			"fin",
+			"kar",
+			"lat",
+			"BAY"
+		],
+		"lat": [
+			"est",
+			"kar",
+			"lit",
+			"BAY"
+		],
+		"lit": [
+			"lat",
+			"kar",
+			"BAY"
+		]
+	},
+	
+	"seaProv": {
+		"WTH": [
+			"for",
+			"wes",
+			"swe",
+			"WTF",
+			"ETH",
+			"ALA",
+			"MAL"
+		],
+		"WTF": [
+			"WTH",
+			"ETH"
+		],
+		"ETH": [
+			"ost",
+			"WTF",
+			"WTH",
+			"ALA"
+		],
+		"ALA": [
+			"ost",
+			"fin",
+			"WTH",
+			"ETH",
+			"MAL",
+			"BAY"
+		],
+		"MAL": [
+			"swe",
+			"dno",
+			"ska",
+			"WTH",
+			"ALA",
+			"BAY",
+			"BOB"
+		],
+		"BAY": [
+			"fin",
+			"est",
+			"lat",
+			"lit",
+			"ALA",
+			"MAL",
+			"BOB"
+		],
+		"BOB": [
+			"ska",
+			"MAL",
+			"BAY"
+		],
+		"SEA": [
+			"owo",
+			"ska"
+		]
+	}
+}
