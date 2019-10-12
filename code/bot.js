@@ -12,7 +12,6 @@ const fs = require('fs');
 // Initialize Discord Bot
 var client = new Discord.Client();
 
-
 // Grab the order parser
 const parseOrders = require('./orderparser.js');
 
@@ -107,7 +106,7 @@ client.on('message', message =>{
 
 			// !move
 			case 'move' : {
-				console.log(parseOrders());
+				console.log(parseOrders(['dno', 'nor' ,{}], 'mov'));
 			break;
 			}
 		}

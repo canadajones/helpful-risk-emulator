@@ -4,7 +4,6 @@ const provList = require('./provLinks/provLinks.json');
 // Get river registry file
 const riverList = require('./provLinks/riverList.json');
 
-
 // Function to sanity check, add additional info to, and organize order info
 function parseOrder(argList = [], orderCMD = "") {
 	// Create array that'll store the order info
@@ -13,7 +12,7 @@ function parseOrder(argList = [], orderCMD = "") {
 	// Check if all necessary arguments have been passed
 	if (orderCMD) {
 		// Check that all arguments are of the correct type (they'll be undefined if they haven't been passed)
-		if (typeof argList[0] == 'string' && typeof argList[1] == 'string' && typeof argList[2] == 'string') {
+		if (typeof argList[0] == 'string' && typeof argList[1] == 'string' && typeof argList[2] == 'object') {
 			// Check if it is a valid simple command
 			if (orderCMD == 'mov' || orderCMD == 'atk' || orderCMD == 'def') {
 				// Put the order command into the return array
