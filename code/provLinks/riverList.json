@@ -1,0 +1,26 @@
+{
+	"landProv": {
+		"ost": [
+			"lap",
+			"mmm",
+			"fin"
+		],
+		"lap": [
+			"ost"
+		],
+		"fin": [
+			"ost"
+		],
+		"mmm": [
+			"ost"
+		]
+	},
+	"seaProv": {
+		"ALA": [
+			"ost",
+			"lap",
+			"mmm",
+			"fin"
+		]
+	}
+}

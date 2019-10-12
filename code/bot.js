@@ -6,11 +6,17 @@ var Discord = require('discord.js');
 // Grab bot key
 const auth = require('./auth.json');
 
-//Get filesystem library
+// Get filesystem library
 const fs = require('fs');
 
 // Initialize Discord Bot
 var client = new Discord.Client();
+
+// Get province list file
+const provList = require('./provLinks/provLinks.json');
+
+// Get river registry file
+const riverList = require('./provLinks/riverList.json');
 
 // Error handler
 client.on("error", (e) => console.error(e));
@@ -105,3 +111,56 @@ client.on('message', message =>{
 	}
 });
 client.login(auth.token);
+
+// Function to sanity check, add additional info to, and organize order info
+function parseOrder(argList = [], orderCMD = "") {
+	// Create array that'll store the order info
+	var movesArr = ['', '', '', {}, []];
+	if (orderCMD) {
+		if (typeof argList[0] == 'string' && typeof argList[1] == 'string' && typeof argList[2] == 'string') {
+			if (orderCMD == 'mov' || orderCMD == 'atk' || orderCMD == 'def') {
+				movesArr[0] = orderCMD;
+				if (argList[0] == argList[0].toLowerCase() && provList.landProv.hasOwnProperty(argList[0])) {
+					movesArr[1] = argList[0];
+					
+					if (riverList.landProv.hasOwnProperty(argList[0])) {
+						for (let i=0; i < riverList.landProv[argList[0]].length; i++){
+							if (riverList.landProv[argList[0]][i] == argList[1]) {
+								movesArr[4] = ['river'];
+								break;
+							}
+						}
+					}
+					
+					if (argList[1] == argList[1].toLowerCase && provList.landProv.hasOwnProperty(argList[1])){
+						movesArr[2] = argList[1];
+					}
+
+					else if (argList[1] == argList[1].toUpperCase && provList.seaProv.hasOwnProperty(argList[1])) {
+						movesArr[2] = argList[1];
+						movesArr[4][movesArr[4].length] = 'bLoad';
+					}
+					
+					else {
+						// invalid end province
+						return 'iep';
+					}
+				}
+				else {
+					// invalid start position
+					return 'isp';
+				}
+				movesArr[3] = {'units': 0};
+				return movesArr;
+			}
+		}
+		else {
+			// too few arguments, or invalid argument type
+			return 'iat';
+		}
+	}
+	else {
+		// invalid function call
+		return 'ifc';
+	}
+}
