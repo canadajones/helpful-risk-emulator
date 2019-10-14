@@ -106,7 +106,7 @@ client.on('message', message =>{
 
 			// !move
 			case 'move' : {
-				console.log(parseOrders(['dno', 'nor' ,{}], 'mov'));
+				message.channel.send('```js\n' + JSON.stringify(parseOrders([args[0], args[1] ,{}], 'mov'), null, '\t') + '```');
 			break;
 			}
 		}

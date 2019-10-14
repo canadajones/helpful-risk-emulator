@@ -39,7 +39,7 @@ function parseOrder(argList = [], orderCMD = "") {
 					if (argList[1] == argList[1].toLowerCase() && provList.landProv.hasOwnProperty(argList[1])){
 						let a = false;
 						for (let x of provList.landProv[argList[0]]) {
-							if (x == argList[0]) {
+							if (x == argList[1]) {
 								movesArr[2] = argList[1];
 								a = true;
 								
@@ -53,8 +53,8 @@ function parseOrder(argList = [], orderCMD = "") {
 					// If we're moving from a land province to a sea province, we're moving a boat or loading untis into a boat, therefore b(oat)Load
 					else if (argList[1] == argList[1].toUpperCase() && provList.seaProv.hasOwnProperty(argList[1])) {
 						let a = false;
-						for (let x of provList.seaProv[argList[0]]) {
-							if (x == argList[0]) {
+						for (let x of provList.landProv[argList[0]]) {
+							if (x == argList[1]) {
 								movesArr[2] = argList[1];
 								movesArr[4][movesArr[4].length] = 'bLoad';
 								a = true;
@@ -80,6 +80,7 @@ function parseOrder(argList = [], orderCMD = "") {
 					// Check if we're trying to move up a river
 					if (riverList.seaProv.hasOwnProperty(argList[0])) {
 						for (let i=0; i < riverList.seaProv[argList[0]].length; i++){
+							console.log(riverList.seaProv[argList[0]][i]);
 							if (riverList.seaProv[argList[0]][i] == argList[1]) {
 								movesArr[4] = ['moveRiver'];
 								break;
@@ -91,7 +92,7 @@ function parseOrder(argList = [], orderCMD = "") {
 					if (argList[1] == argList[1].toUpperCase() && provList.seaProv.hasOwnProperty(argList[1])){
 						let a = false;
 						for (let x of provList.seaProv[argList[0]]) {
-							if (x == argList[0]) {
+							if (x == argList[1]) {
 								movesArr[2] = argList[1];
 								a = true;
 								
@@ -103,10 +104,10 @@ function parseOrder(argList = [], orderCMD = "") {
 					}
 					
 					// If we're moving from sea to land, we need to log it
-					else if (argList[1] == argList[1].toLowerCase() && provList.seaProv.hasOwnProperty(argList[1])) {
+					else if (argList[1] == argList[1].toLowerCase() && provList.landProv.hasOwnProperty(argList[1])) {
 						let a = false;
-						for (let x of provList.landProv[argList[0]]) {
-							if (x == argList[0]) {
+						for (let x of provList.seaProv[argList[0]]) {
+							if (x == argList[1]) {
 								movesArr[2] = argList[1];
 								movesArr[4][movesArr[4].length] = 'bUnload';
 								a = true;
