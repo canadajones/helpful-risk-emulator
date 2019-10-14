@@ -34,15 +34,36 @@ function parseOrder(argList = [], orderCMD = "") {
 						}
 					}
 					
+					
 					// If we're moving from one land province to another, no problem
 					if (argList[1] == argList[1].toLowerCase() && provList.landProv.hasOwnProperty(argList[1])){
-						movesArr[2] = argList[1];
+						let a = false;
+						for (let x of provList.landProv[argList[0]]) {
+							if (x == argList[0]) {
+								movesArr[2] = argList[1];
+								a = true;
+								
+							}
+						}
+						if (!a) {
+							return 'iep';
+						}
 					}
 
 					// If we're moving from a land province to a sea province, we're moving a boat or loading untis into a boat, therefore b(oat)Load
 					else if (argList[1] == argList[1].toUpperCase() && provList.seaProv.hasOwnProperty(argList[1])) {
-						movesArr[2] = argList[1];
-						movesArr[4][movesArr[4].length] = 'bLoad';
+						let a = false;
+						for (let x of provList.seaProv[argList[0]]) {
+							if (x == argList[0]) {
+								movesArr[2] = argList[1];
+								movesArr[4][movesArr[4].length] = 'bLoad';
+								a = true;
+								
+							}
+						}
+						if (!a) {
+							return 'iep';
+						}
 					}
 					
 					else {
@@ -66,15 +87,35 @@ function parseOrder(argList = [], orderCMD = "") {
 						}
 					}
 					
-					// IF we're going from one sea province to another, no problem
+					// If we're going from one sea province to another, no problem
 					if (argList[1] == argList[1].toUpperCase() && provList.seaProv.hasOwnProperty(argList[1])){
-						movesArr[2] = argList[1];
+						let a = false;
+						for (let x of provList.seaProv[argList[0]]) {
+							if (x == argList[0]) {
+								movesArr[2] = argList[1];
+								a = true;
+								
+							}
+						}
+						if (!a) {
+							return 'iep';
+						}
 					}
 					
 					// If we're moving from sea to land, we need to log it
 					else if (argList[1] == argList[1].toLowerCase() && provList.seaProv.hasOwnProperty(argList[1])) {
-						movesArr[2] = argList[1];
-						movesArr[4][movesArr[4].length] = 'bUnload';
+						let a = false;
+						for (let x of provList.landProv[argList[0]]) {
+							if (x == argList[0]) {
+								movesArr[2] = argList[1];
+								movesArr[4][movesArr[4].length] = 'bUnload';
+								a = true;
+								
+							}
+						}
+						if (!a) {
+							return 'iep';
+						}
 					}
 					
 					else {
