@@ -16,7 +16,7 @@ var client = new Discord.Client();
 const parseOrders = require('./orderparser.js');
 
 // Grab the army handler
-const armyLib = require('./armies.js')
+const armyLib = require('./armies.js');
 
 // Error handler
 client.on("error", (e) => console.error(e));

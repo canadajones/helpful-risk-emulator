@@ -5,7 +5,7 @@ const provList = require('./provLinks/provLinks.json');
 const riverList = require('./provLinks/riverList.json');
 
 // Get army library
-const armyLib = require('./armies.js')
+const armyLib = require('./armies.js');
 
 // Function to sanity check, add additional info to, and organize order info
 function parseOrder(argList = [], orderCMD = "") {

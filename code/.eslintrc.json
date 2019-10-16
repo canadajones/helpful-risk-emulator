@@ -5,6 +5,16 @@
         "es6": true,
         "node": true
     },
+	"overrides": [
+    { "files": ["*.mjs"], "parserOptions": { "sourceType": "module" } },
+    {
+      "files": ["*.jsx"],
+      "parserOptions": {
+        "sourceType": "module",
+        "ecmaFeatures": { "jsx": true }
+      }
+    }
+  ],
     "extends": "eslint:recommended",
     "globals": {
         "Atomics": "readonly",
