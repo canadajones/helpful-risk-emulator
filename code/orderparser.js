@@ -4,6 +4,9 @@ const provList = require('./provLinks/provLinks.json');
 // Get river registry file
 const riverList = require('./provLinks/riverList.json');
 
+// Get army library
+const armyLib = require('./armies.js')
+
 // Function to sanity check, add additional info to, and organize order info
 function parseOrder(argList = [], orderCMD = "") {
 	// Create array that'll store the order info
@@ -131,7 +134,7 @@ function parseOrder(argList = [], orderCMD = "") {
 				}
 				
 				// Put the unit object into the return array
-				movesArr[3] = {'units': 0};
+				movesArr[3] = armyLib.parseUnits(argList[2]);
 				
 				// Return the order array
 				return movesArr;

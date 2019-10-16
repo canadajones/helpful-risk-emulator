@@ -15,6 +15,9 @@ var client = new Discord.Client();
 // Grab the order parser
 const parseOrders = require('./orderparser.js');
 
+// Grab the army handler
+const armyLib = require('./armies.js')
+
 // Error handler
 client.on("error", (e) => console.error(e));
 client.on("warn", (e) => console.warn(e));
@@ -98,19 +101,26 @@ client.on('message', message =>{
 
 			// !load
 			case 'load': {
-				let rawdata = fs.readFileSync('HREObject.json');  
+				let rawdata = fs.readFileSync('HREObject.json');
 				hre = JSON.parse(rawdata);
 				message.channel.send('Successfully loaded!');
 				break;
 			}
 
 			// !move
-			case 'move' : {
+			case 'move': {
 				message.channel.send('```js\n' + JSON.stringify(parseOrders([args[0], args[1] ,{}], 'mov'), null, '\t') + '```');
+			break;
+			}
+			
+			// !armytest 
+			case 'armytest': {
+				message.channel.send('```js\n' + JSON.stringify(new armyLib.Army("Allan", [5, 3, 1]), null, '\t')+ '```');
 			break;
 			}
 		}
 	}
 });
 client.login(auth.token);
+
 
