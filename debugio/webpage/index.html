@@ -13,8 +13,11 @@
 <body>
 	<h1 class="w3-padding">Console:</h1>
 	<hr>
-	<textarea id="console" style="display: block;">
-		Why, hello there, Old Sport!
-	</textarea>
+	<div contenteditable="true" id="console" style="display: block;">
+Greetings.
+We are using node <script>document.write(process.versions.node)</script>,
+Chrome <script>document.write(process.versions.chrome)</script>,
+and Electron <script>document.write(process.versions.electron)</script>.
+	</div>
 </body>
 </html>
