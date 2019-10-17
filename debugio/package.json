@@ -1,0 +1,14 @@
+{
+  "name": "debugio",
+  "version": "0.0.1",
+  "description": "node simple input and output app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "canada-jones",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "electron": "^6.0.12"
+  }
+}

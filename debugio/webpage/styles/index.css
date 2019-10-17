@@ -1,0 +1,13 @@
+h1 {
+	font-family: Bahnschrift, Calibri, sans-serif;
+	font-size: 36pt;
+}
+
+#console {
+	display: block;
+	font-family: 'Courier New', Courier, monospace;
+
+	margin: 0 2%;
+	width: 96%;
+	height: 400px;
+}
