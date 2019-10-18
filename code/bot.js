@@ -124,3 +124,28 @@ client.on('message', message =>{
 client.login(auth.token);
 
 
+// Inter-Process Communications
+// For DebugIO access
+
+var ipc = require('node-ipc');
+
+ipc.config.id = 'helpfulrisk';
+ipc.config.retry = 1500;
+
+ipc.serve(
+	function() {
+		ipc.server.on(
+			'abc',
+			function(data, socket){
+				ipc.log('got a message : '.debug, data);
+				ipc.server.emit(
+					socket,
+					'abc',  //this can be anything you want so long as your client knows
+					data+' world!'
+				);
+			}
+		);
+	}
+);
+
+ipc.server.start();
