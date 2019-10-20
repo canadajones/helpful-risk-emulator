@@ -137,6 +137,8 @@ ipc.serve(
 		ipc.server.on(
 			'abc',
 			function(data, socket){
+				console.log(data);
+				console.log(socket);
 				ipc.log('got a message : '.debug, data);
 				ipc.server.emit(
 					socket,

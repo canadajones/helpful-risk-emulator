@@ -14,8 +14,8 @@ h1 {
 	padding: 8px;
 	margin: 0 2%;
 	width: 96%;
-	height: 400px;
-	overflow: scroll;
+	height: 600px;
+	overflow: auto;
 }
 
 #consoleInput {
