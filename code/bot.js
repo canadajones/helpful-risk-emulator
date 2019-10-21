@@ -115,7 +115,8 @@ client.on('message', message =>{
 			
 			// !armytest 
 			case 'armytest': {
-				message.channel.send('```js\n' + JSON.stringify(new armyLib.Army("Allan", [5, 3, 1]), null, '\t')+ '```');
+				// message.channel.send('```js\n' + JSON.stringify(new armyLib.Army("Allan", [5, 3, 1]), null, '\t')+ '```');
+				console.log(new armyLib.Army(4, [5, 3, 1]));
 			break;
 			}
 		}
@@ -123,7 +124,7 @@ client.on('message', message =>{
 });
 client.login(auth.token);
 
-
+/*
 // Inter-Process Communications
 // For DebugIO access
 
@@ -151,3 +152,4 @@ ipc.serve(
 );
 
 ipc.server.start();
+*/
