@@ -16,7 +16,7 @@ var client = new Discord.Client();
 const parseOrders = require('./orderparser.js');
 
 // Grab the army handler
-const armyLib = require('./armies.js');
+const Army = require('./armylib.js');
 
 // Error handler
 client.on("error", (e) => console.error(e));
@@ -25,9 +25,17 @@ client.on("warn", (e) => console.warn(e));
 // Declare status variables and objects
 // Main object
 // eslint-disable-next-line no-unused-vars
-var hre = {};
+var hre = {
+	playerData: {},
+	mapData: {
+		dno: {
+			armies: {}
+		}
+	}
+};
 
-
+// Sign-in status message
+// When starting the bot, this'll tell us that everything is set and that we're ready to go
 client.on('ready', () => {
 	console.log('Connected');
 	console.log('Logged in as: ');
@@ -116,13 +124,18 @@ client.on('message', message =>{
 			// !armytest 
 			case 'armytest': {
 				// message.channel.send('```js\n' + JSON.stringify(new armyLib.Army("Allan", [5, 3, 1]), null, '\t')+ '```');
-				console.log(new armyLib.Army(4, [5, 3, 1]));
+				console.log(new Army(4, [5, 3, 1]));
 			break;
 			}
 		}
 	}
 });
 client.login(auth.token);
+
+for (let a=0; a < 10; a++) {
+	console.log(new Army('allan', [5, 3, 1]));
+}
+
 
 /*
 // Inter-Process Communications

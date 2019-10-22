@@ -5,7 +5,7 @@ const provList = require('./provLinks/provLinks.json');
 const riverList = require('./provLinks/riverList.json');
 
 // Get army library
-const armyLib = require('./armies.js');
+const armyLib = require('./armylib.js');
 
 // Function to sanity check, add additional info to, and organize order info
 function parseOrder(argList = [], orderCMD = "") {
@@ -17,7 +17,7 @@ function parseOrder(argList = [], orderCMD = "") {
 		// Check that all arguments are of the correct type (they'll be undefined if they haven't been passed)
 		if (typeof argList[0] == 'string' && typeof argList[1] == 'string' && typeof argList[2] == 'object') {
 			// Check if it is a valid simple command
-			if (orderCMD == 'mov' || orderCMD == 'atk' || orderCMD == 'def') {
+			if (orderCMD == 'mov' || orderCMD == 'atk') {
 				// Put the order command into the return array
 				movesArr[0] = orderCMD;
 				
