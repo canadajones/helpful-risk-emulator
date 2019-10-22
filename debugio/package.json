@@ -9,6 +9,7 @@
   "author": "canada-jones",
   "dependencies": {
     "discord.js": "^11.5.1",
-    "electron": "^6.0.12"
+    "electron": "^6.0.12",
+    "node-ipc": "^9.1.1"
   }
 }

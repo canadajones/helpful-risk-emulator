@@ -11,13 +11,43 @@
 	<title>DebugIO</title>
 </head>
 <body>
-	<h1 class="w3-padding">Console:</h1>
+	<h1 class="w3-padding">Console</h1>
 	<hr>
-	<div contenteditable="true" id="console" style="display: block;">
-Greetings.
-We are using node <script>document.write(process.versions.node)</script>,
-Chrome <script>document.write(process.versions.chrome)</script>,
-and Electron <script>document.write(process.versions.electron)</script>.
+	<div id="console" style="display: block;">
+		Greetings.
+		We are using node <script>document.write(process.versions.node)</script>,
+		Chrome <script>document.write(process.versions.chrome)</script>,
+		and Electron <script>document.write(process.versions.electron)</script>.
 	</div>
+	<input type="text" id="consoleInput" onkeydown="repeat(event)">
+	<script> 
+		var input = document.getElementById("consoleInput");
+		var output = document.getElementById("console");
+	
+
+		function repeat(event) {
+			if (event.key == "Enter") {
+				output.innerHTML = output.innerHTML + '<br>> '+  input.value;
+				input.value = '';
+			}
+		}
+
+
+		var ipc = require('node-ipc');
+		
+		ipc.connectTo(
+        'helpfulrisk',
+        function(){
+            ipc.of.helpfulrisk.on(
+                'abc',
+                function(data){
+                    ipc.log(data.debug);
+                    //if data was a string, it would have the color set to the debug style applied to it
+                }
+			)
+			ipc.of.helpfulrisk.emit('abc');
+        }
+    );
+	</script>
 </body>
 </html>

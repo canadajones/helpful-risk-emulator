@@ -1,13 +1,32 @@
 h1 {
 	font-family: Bahnschrift, Calibri, sans-serif;
 	font-size: 36pt;
+	margin-left: 2%;
 }
 
 #console {
 	display: block;
 	font-family: 'Courier New', Courier, monospace;
+	background-color: whitesmoke;
 
+	border: 1px lightgray solid;
+	
+	padding: 8px;
 	margin: 0 2%;
 	width: 96%;
-	height: 400px;
+	height: 600px;
+	overflow: auto;
+}
+
+#consoleInput {
+	display: block;
+	font-family: 'Courier New', Courier, monospace;
+	background-color: whitesmoke;
+
+	border: 1px lightgray solid;
+	
+	padding: 8px;
+	margin: 20px 2% 0 2%;
+	width: 96%;
+	
 }
