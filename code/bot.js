@@ -127,13 +127,19 @@ client.on('message', message =>{
 				console.log(new Army(4, [5, 3, 1]));
 			break;
 			}
+
+			// !cleanexit
+			case 'cleanexit':{
+				Army.cleanExit();
+				process.exit(0);
+			}
 		}
 	}
 });
 client.login(auth.token);
 
 for (let a=0; a < 10; a++) {
-	console.log(new Army('allan', [5, 3, 1]));
+	console.log(new Army('allan', [5, 3, 1], 'dno'));
 }
 
 
