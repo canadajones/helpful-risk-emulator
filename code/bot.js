@@ -138,10 +138,8 @@ client.on('message', message =>{
 });
 client.login(auth.token);
 
-for (let a=0; a < 10; a++) {
-	console.log(new Army('allan', [5, 3, 1], 'dno'));
-}
-
+console.log(new Army('allan', [5, 3, 1], 'dno'));
+Army.parseUnits({}, 'st')
 
 /*
 // Inter-Process Communications

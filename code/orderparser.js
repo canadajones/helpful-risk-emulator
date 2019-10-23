@@ -7,7 +7,12 @@ const riverList = require('./provLinks/riverList.json');
 // Get army library
 const armyLib = require('./armylib.js');
 
-// Function to sanity check, add additional info to, and organize order info
+
+/**
+ * Function to sanity check, add additional info to, and organize order info
+ * @param {Array} argList An array containing the order parameters, in the form of [origProv, destProv, unitObj]
+ * @param {String} orderCMD A string representing the order to be executed
+ */
 function parseOrder(argList = [], orderCMD = "") {
 	// Create array that'll store the order info
 	var movesArr = ['', '', '', {}, []];
