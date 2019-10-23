@@ -27,9 +27,14 @@
 
 		function repeat(event) {
 			if (event.key == "Enter") {
-				output.innerHTML = output.innerHTML + '<br>> '+  input.value;
+				output.innerHTML = output.innerHTML + '<br>' +  input.value;
 				input.value = '';
+				ipc.of.helpfulrisk.emit('consoleInput', {a: 2});
 			}
+		}
+
+		function consoleLog(logstring) {
+			output.innerHTML = output.innerHTML + '<br>' + logstring;
 		}
 
 
@@ -38,14 +43,10 @@
 		ipc.connectTo(
         'helpfulrisk',
         function(){
-            ipc.of.helpfulrisk.on(
-                'abc',
-                function(data){
-                    ipc.log(data.debug);
-                    //if data was a string, it would have the color set to the debug style applied to it
+            ipc.of.helpfulrisk.on('consoleLog', (data) => {
+                    consoleLog(data.a);
                 }
 			)
-			ipc.of.helpfulrisk.emit('abc');
         }
     );
 	</script>
