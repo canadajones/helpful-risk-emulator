@@ -70,7 +70,7 @@ client.on('message', message =>{
 			// !quack
 			case 'quack': {
 				let a = Math.floor(Math.random()*100) + 1;
-				if (a == 100) {
+				if (a > 95) {
 					message.channel.send('***H J O N K***');
 					break;
 				}

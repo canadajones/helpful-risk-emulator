@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Name says all",
   "main": "bot.js",
-  "author": "canada-and-jupiter",
+  "author": "canada-and-co",
   "dependencies": {
     "bufferutil": "^4.0.1",
     "discord.js": "^11.4.2",

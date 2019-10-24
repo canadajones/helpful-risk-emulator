@@ -14,9 +14,9 @@ class Army {
 	/**
 	 * Army class constructor
 	 * @constructor
-	 * @param {String} cmdr Commander UID reference (string)
-	 * @param {Array} unitArr An array of unit amounts
-	 * @param {String} uProv Province name reference (string)
+	 * @param {string} cmdr Commander UID reference (string)
+	 * @param {array} unitArr An array of unit amounts
+	 * @param {string} uProv Province name reference (string)
 	 */
 	constructor(cmdr = '', unitArr = [], uProv = '') {
 		if (typeof cmdr != 'string' || typeof unitArr != 'object' || typeof uProv != 'string') {
@@ -35,7 +35,7 @@ class Army {
 	
 	/**
 	 * Unit order parser
-	 * @param {Object} unitObj A object of type and class Army
+	 * @param {object} unitObj A object of type and class Army
 	 */
 	static parseUnits(unitObj = {}) {
 		if (unitObj === null || typeof unitObj != 'object')  {
@@ -50,8 +50,25 @@ class Army {
 	}
 
 	/**
-	 * 
-	 * @param {String} newProv The name of the province to be moved to (strings)
+	 * Move units from a army to another
+	 * @param {object} armyO Name of the province we're moving from, or an army id
+	 * @param {string} newProv Name of the province we're moving into
+	 * @param {array} amount Amount of soldiers we're moving
+	 */
+	static moveUnits(armyO, newProv, amount, cmdr) {
+		if (typeof armyO != 'object'|| typeof amount !='number' || typeof newProv != 'string' || typeof cmdr != 'string') {
+			return 'inp';
+		}
+		armyO.infantry -= amount[0];
+		armyO.cavalry -= amount[1];
+		armyO.artillery -= amount[2];
+
+		return new Army('')
+		
+	}
+	/**
+	 * Move whole army to new province
+	 * @param {string} newProv The name of the province to be moved to (strings)
 	 */
 	updateProv(newProv = '') {
 		if (typeof newProv != 'string' || !(provList.landProv.hasOwnProperty(newProv) || provList.seaProv.hasOwnProperty(newProv))) {
