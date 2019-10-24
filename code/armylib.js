@@ -13,6 +13,7 @@ if(isNaN(persistentCount)) throw 'counter not a number';
 class Army {
 	/**
 	 * Army class constructor
+	 * @constructor
 	 * @param {String} cmdr Commander UID reference (string)
 	 * @param {Array} unitArr An array of unit amounts
 	 * @param {String} uProv Province name reference (string)
@@ -21,6 +22,7 @@ class Army {
 		if (typeof cmdr != 'string' || typeof unitArr != 'object' || typeof uProv != 'string') {
 			return {err: 'ica'};
 		}
+		
 		this.type = 'ArmyObj';
 		this.uuid = persistentCount++;
 		

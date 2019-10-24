@@ -42,6 +42,9 @@ client.on('ready', () => {
 	console.log(client.user.username + ' (id: '+ client.user.id +')');
 });
 
+/**
+ * Register event handler for messages, this spins off everything else
+ */
 client.on('message', message =>{
 	// Our bot needs to know if it will execute a command
 	// It will listen for messages that will start with `!`
@@ -138,8 +141,6 @@ client.on('message', message =>{
 });
 client.login(auth.token);
 
-console.log(new Army('allan', [5, 3, 1], 'dno'));
-Army.parseUnits({}, 'st')
 
 /*
 // Inter-Process Communications

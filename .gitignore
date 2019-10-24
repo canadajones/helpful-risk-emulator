@@ -126,3 +126,4 @@ $RECYCLE.BIN/
 # Ignore auth.json
 code/auth.json
 code/HREObject.json
+out/
