@@ -151,23 +151,20 @@ var ipc = require('node-ipc');
 ipc.config.id = 'helpfulrisk';
 ipc.config.retry = 1500;
 
-ipc.serve(
-	function() {
-		ipc.server.on(
-			'abc',
-			function(data, socket){
-				console.log(data);
-				console.log(socket);
-				ipc.log('got a message : '.debug, data);
-				ipc.server.emit(
-					socket,
-					'abc',  //this can be anything you want so long as your client knows
-					data+' world!'
-				);
+ipc.serve(function() {
+		// eslint-disable-next-line no-unused-vars
+		ipc.server.on('consoleInput', function(data, socket){
+				ipc.log(data);
 			}
-		);
+		)
 	}
 );
 
 ipc.server.start();
+
+function advLog(str1) {
+	let b = {};
+	b.a = str1;
+	ipc.server.broadcast('consoleLog', b);
+}
 */
