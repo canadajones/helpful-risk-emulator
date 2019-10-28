@@ -17,6 +17,7 @@ class Army {
 	 * @param {string} cmdr Commander UID reference (string)
 	 * @param {array} unitArr An array of unit amounts
 	 * @param {string} uProv Province name reference (string)
+	 * @returns {object} Army class object, or an error object with the key 'a' describing the error
 	 */
 	constructor(cmdr = '', unitArr = [], uProv = '') {
 		if (typeof cmdr != 'string' || typeof unitArr != 'object' || typeof uProv != 'string') {
@@ -51,9 +52,10 @@ class Army {
 
 	/**
 	 * Move units from a army to another
-	 * @param {object} armyO Name of the province we're moving from, or an army id
+	 * @param {object} armyO Army object we're performing operations on
 	 * @param {string} newProv Name of the province we're moving into
 	 * @param {array} amount Amount of soldiers we're moving
+	 * @returns {object} New army object with values taken from the input army object
 	 */
 	static moveUnits(armyO, newProv, amount, cmdr) {
 		if (typeof armyO != 'object'|| typeof amount !='number' || typeof newProv != 'string' || typeof cmdr != 'string') {
