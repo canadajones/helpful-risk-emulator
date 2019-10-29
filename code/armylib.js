@@ -59,11 +59,27 @@ class Army {
 		if (typeof armyO != 'object'|| typeof amount !='number' || typeof newProv != 'string' || typeof cmdr != 'string') {
 			return 'inp';
 		}
-		armyO.infantry -= amount[0];
-		armyO.cavalry -= amount[1];
-		armyO.artillery -= amount[2];
+		
 
-		return new Army('')
+		if (armyO.infantry - amount[0] < 0 || armyO.cavalry - amount[1] < 0 || armyO.artillery - amount[2] < 0) {
+			return 'neu';
+		}
+		else {
+			armyO.infantry -= amount[0];
+			armyO.cavalry -= amount[1];
+			armyO.artillery -= amount[2];
+			
+			if (armyO.infantry == 0 && armyO.cavalry == 0 && armyO.artillery == 0) {
+				console.log('fuck');
+			}
+			if (cmdr === null) {
+				return new Army('', [amount[0], amount[1], amount[2]], newProv);
+			}
+			else {
+				return new Army(cmdr, [amount[0], amount[1], amount[2]], newProv);
+			}
+		}
+		
 		
 	}
 	/**
