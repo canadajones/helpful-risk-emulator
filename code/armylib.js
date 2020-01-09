@@ -1,3 +1,24 @@
+/**
+ * Army object type
+ * @typedef {Object} ArmyObj
+ * @property {string} type String identifying what kind of object this is. Will be set to 'armyObj' for this object.
+ * @property {number} uuid Incremental universally unique id
+ * @property {string} prov Name of province unit is stationed in
+ * @property {string} cmdr The commander the unit is attached to
+ * @property {Object} levelone Container for level one units
+ * @property {number} levelone.infantry Amount of infantry units
+ * @property {number} levelone.cavalry Amount of cavalry units
+ * @property {number} levelone.artillery Amount of artillery units
+ * @property {Object} leveltwo Container for level one units
+ * @property {number} leveltwo.infantry Amount of infantry units
+ * @property {number} leveltwo.cavalry Amount of cavalry units
+ * @property {number} leveltwo.artillery Amount of artillery units
+ * @property {Object} levelthree Container for level one units
+ * @property {number} levelthree.infantry Amount of infantry units
+ * @property {number} levelthree.cavalry Amount of cavalry units
+ * @property {Object} levelthree.artillery Amount of artillery units
+*/
+
 // Get fs library
 const fs = require('fs');
 
@@ -9,7 +30,6 @@ persistentCount = Number(JSON.parse(persistentCount).a);
 
 if(isNaN(persistentCount)) throw 'counter not a number';
 
-
 class Army {
 	/**
 	 * Army class constructor
@@ -17,7 +37,7 @@ class Army {
 	 * @param {string} cmdr Commander UID reference (string)
 	 * @param {array} unitArr An array of unit amounts
 	 * @param {string} uProv Province name reference (string)
-	 * @returns {object} Army class object, or an error object with the key 'a' describing the error
+	 * @returns {ArmyObj} Army class object, or an error object with the key 'err' describing the error
 	 */
 	constructor(cmdr = '', unitArr = [], uProv = '') {
 		if (typeof cmdr != 'string' || typeof unitArr != 'object' || typeof uProv != 'string') {
@@ -29,11 +49,23 @@ class Army {
 		
 		this.prov = uProv;
 		this.commander = cmdr;
-		this.infantry = unitArr[0];
-		this.cavalry = unitArr[1];
-		this.artillery = unitArr[2];
+		this.levelone = {
+			infantry: unitArr[0],
+			cavalry: unitArr[1],
+			artillery: unitArr[2]
+		}
+		this.leveltwo = {
+			infantry: unitArr[0],
+			cavalry: unitArr[1],
+			artillery: unitArr[2]
+		}
+		this.levelthree = {
+			infantry: unitArr[0],
+			cavalry: unitArr[1],
+			artillery: unitArr[2]
+		}
 	}
-	
+
 	/**
 	 * Unit order parser
 	 * @param {object} unitObj A object of type and class Army
