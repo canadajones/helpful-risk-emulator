@@ -76,7 +76,7 @@ class Army {
 		}
 	}
 	/**
-	 * Clean exit function; terminates all open strings in the Army class
+	 * Clean exit function; saves the persistent counter to disk
 	 */
 	static cleanExit() {
 		fs.writeFileSync('count.json', JSON.stringify({"a": persistentCount}));

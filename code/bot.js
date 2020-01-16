@@ -126,8 +126,7 @@ client.on('message', message =>{
 			
 			// !armytest 
 			case 'armytest': {
-				// message.channel.send('```js\n' + JSON.stringify(new armyLib.Army("Allan", [5, 3, 1]), null, '\t')+ '```');
-				console.log(new Army("Keynes", [[4, 3, 2], [6, 2, 1], [1, 6, 4]], "owo"));
+				message.channel.send('```js\n' + JSON.stringify(new Army("Keynes", [[4, 3, 2], [6, 2, 1], [1, 6, 4]], "owo"), null, '\t')+ '```');
 			break;
 			}
 
