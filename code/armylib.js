@@ -50,19 +50,19 @@ class Army {
 		this.prov = uProv;
 		this.commander = cmdr;
 		this.levelone = {
-			infantry: unitArr[0],
-			cavalry: unitArr[1],
-			artillery: unitArr[2]
+			infantry: unitArr[0][0],
+			cavalry: unitArr[0][1],
+			artillery: unitArr[0][2]
 		}
 		this.leveltwo = {
-			infantry: unitArr[0],
-			cavalry: unitArr[1],
-			artillery: unitArr[2]
+			infantry: unitArr[1][0],
+			cavalry: unitArr[1][1],
+			artillery: unitArr[1][2]
 		}
 		this.levelthree = {
-			infantry: unitArr[0],
-			cavalry: unitArr[1],
-			artillery: unitArr[2]
+			infantry: unitArr[2][0],
+			cavalry: unitArr[2][1],
+			artillery: unitArr[2][2]
 		}
 	}
 
