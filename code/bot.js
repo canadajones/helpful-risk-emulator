@@ -31,7 +31,10 @@ var hre = {
 		dno: {
 			armies: {}
 		}
-	}
+	},
+	gameData: {
+		armyDB: {}
+	} 
 };
 
 // Sign-in status message
