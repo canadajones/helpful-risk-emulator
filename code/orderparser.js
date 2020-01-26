@@ -156,7 +156,7 @@ function parseOrder(argList = [], orderCMD = "") {
 						return 'isp';
 					}
 					// Put the unit object into the return array
-					movesArr[3] = armyLib.parseUnits(argList[2]);
+					movesArr[3] = armyLib.parseUnits('mov', argList[0], argList[1], argList[2]);
 					
 					// Return the order array
 					return movesArr;
@@ -167,6 +167,7 @@ function parseOrder(argList = [], orderCMD = "") {
 					return;
 				}
 				default:
+					// invalid order name 
 					return 'ion';
 			}
 		}
